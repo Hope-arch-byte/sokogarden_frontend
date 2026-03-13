@@ -5,16 +5,16 @@ import axios from "axios";
 const SignUp = () => {
 
   // initializing hooks
-  const[username,setUsername]=useState()
-  const[email,setEmail]=useState()
-  const[phone,setPhone]=useState()
-  const[password,setPassword]=useState()
+  const[username,setUsername]=useState("")
+  const[email,setEmail]=useState("")
+  const[phone,setPhone]=useState("")
+  const[password,setPassword]=useState("")
 
   // initializing hooks for loading ,success and error
 
-  const[loading,setLoading]=useState()
-  const[success,setSuccess]=useState()
-  const[error,setError]=useState()
+  const[loading,setLoading]=useState("")
+  const[success,setSuccess]=useState("")
+  const[error,setError]=useState("")
 
   // function that sends data to the database
 
@@ -63,27 +63,51 @@ const SignUp = () => {
           <p className='text-danger'>{error}</p>
 
         {/* {username} */}
-        <input type="text" placeholder='Enter Your Username' className='form-control'required value={username} 
+        <input 
+        type="text" 
+        placeholder='Enter Your Username' 
+        className='form-control'
+        required 
+        value={username} 
         onChange={(e)=>setUsername(e.target.value)}/>
         <br />
 
         {/* {email} */}
-        <input type="email" placeholder='Enter Your Email' className='form-control'required value={email}
+        <input 
+        type="email" 
+        placeholder='Enter Your Email' 
+        className='form-control'
+        required 
+        value={email}
         onChange={(e)=>setEmail(e.target.value)}/>
         <br />
 
         {/* {phone} */}
-        <input type="tel" placeholder='Enter Your Phone Number' className='form-control'required value={phone}
+        <input 
+        type="tel" 
+        placeholder='Enter Your Phone Number' 
+        className='form-control'
+        required 
+        value={phone}
         onChange={(e)=>setPhone(e.target.value)}/>
         <br />
 
         {/* {password} */}
-        <input type="password" placeholder='Enter Your Password' className='form-control'required value={password}
+        <input 
+        type="password" 
+        placeholder='Enter Your Password' 
+        className='form-control'
+        required 
+        value={password}
         onChange={(e)=>setPassword(e.target.value)}/>
         <br /><br />
 
 
-        <input type="submit" value={'Sign Up'} className='w-100 form-control bg-secondary text-white'required />
+        <input 
+        type="submit" 
+        value={'Sign Up'} 
+        className='w-100 form-control bg-secondary text-white'
+        required />
 
         <p>Already have an account?<Link to='/signin'>Sign In</Link></p>
       </form>
