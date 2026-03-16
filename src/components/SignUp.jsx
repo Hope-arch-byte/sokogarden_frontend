@@ -39,7 +39,12 @@ const SignUp = () => {
     setLoading('')
 
     setSuccess(response.data.message)
-
+    
+    // used to clear the data in the frontend form
+    setUsername('')
+    setEmail('')
+    setPassword('')
+    setPhone('')
 
     } 
     catch (error) {
@@ -107,7 +112,7 @@ const SignUp = () => {
         type="submit" 
         value={'Sign Up'} 
         className='w-100 form-control bg-secondary text-white'
-        required />
+        />
 
         <p>Already have an account?<Link to='/signin'>Sign In</Link></p>
       </form>

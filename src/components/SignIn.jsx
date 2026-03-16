@@ -49,6 +49,9 @@ const SignIn = () => {
         setError(response.data.message);
       }
 
+      // for clearing the frontend form after signing in successfully
+      setEmail('')
+      setPassword('')
     } 
     catch (error) {
       setLoading('');
