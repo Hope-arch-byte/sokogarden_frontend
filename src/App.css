@@ -37,3 +37,13 @@
     transform: rotate(360deg);
   }
 }
+
+.product_img{
+  width: 230px;
+  height: 200px;
+  object-fit: contain;
+}
+.product_img:hover{
+  transition: 3s;
+  transform: scale(1.2);
+}
