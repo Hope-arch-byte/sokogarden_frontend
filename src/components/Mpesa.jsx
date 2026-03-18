@@ -35,6 +35,8 @@ const Mpesa = () => {
       setError(error.message)      
      }
   }  
+  const image_url='http://hopegathoni.alwaysdata.net/static/images/'
+
 
   return (
     <div className='row justify-content-center'>
@@ -44,6 +46,8 @@ const Mpesa = () => {
           <p className='text-success'>{product.product_name}</p>
           <p className='text-secondary'>{product.product_description}</p>
           <p className='text-warning'>{product.product_cost}</p>
+          <img src={image_url +product.product_photo} alt="cake" className='product_img mt-2'/>
+
 
         <div className='col-md-4'>
 
