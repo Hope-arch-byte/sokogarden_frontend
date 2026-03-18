@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState ,useEffect} from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
 
 const GetProducts = () => {
   // initiaizing the hooks.
@@ -8,6 +10,8 @@ const GetProducts = () => {
   const [error,setError]=useState('')
   const [products,setProducts]=useState([])
   // sq brackets are used becoz the products are stored in 4m of an array, success is not in the hooks coz it used to store a msg which is not needed.
+
+  const navigate = useNavigate()
 
   const image_url='http://hopegathoni.alwaysdata.net/static/images/'
 
@@ -59,7 +63,11 @@ const GetProducts = () => {
             <h5 className='text-success'>{product.product_name}</h5>
             <p className='text-secondary'>{product.product_description}</p>
             <p className='text-warning'>{product.product_cost}</p>
-            <input type="button" className='btn btn-secondary w-100' value='Make payment' />
+
+            <input type="submit" 
+            className='btn btn-secondary w-100' 
+            value='Purchase now' 
+            onClick={()=>navigate('/mpesa',{state:{product}})}/>
           </div>
 
         </div>
